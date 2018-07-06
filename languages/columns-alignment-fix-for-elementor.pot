@@ -1,0 +1,42 @@
+# Copyright (C) 2018 Columns Alignment Fix for Elementor
+# This file is distributed under the same license as the Columns Alignment Fix for Elementor package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Columns Alignment Fix for Elementor\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: columns-alignment-fix-for-elementor.php:3
+msgid "Columns Alignment Fix for Elementor"
+msgstr ""
+
+#: columns-alignment-fix-for-elementor.php:4
+msgid "http://wordpress.org/plugins/columns-alignment-fix-for-elementor"
+msgstr ""
+
+#: columns-alignment-fix-for-elementor.php:5
+msgid "Add an option to fix Elementor's inconsistent columns alignment when using columns gap on sections."
+msgstr ""
+
+#: columns-alignment-fix-for-elementor.php:7
+msgid "SukiWP"
+msgstr ""
+
+#: columns-alignment-fix-for-elementor.php:8
+msgid "https://sukiwp.com/about/"
+msgstr ""
+
+#: columns-alignment-fix-for-elementor.php:67
+msgid "Enable Columns Alignment Fix"
+msgstr ""
+
+#: columns-alignment-fix-for-elementor.php:68
+msgid "It will remove the \"weird\" columns gap added by Elementor on the left and right side of each section (when `Columns Gap` is active). This helps you to have consistent content width without having to manually readjust it everytime you create sections with `Columns Gap`"
+msgstr ""
