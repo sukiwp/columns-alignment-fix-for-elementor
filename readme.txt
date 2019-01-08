@@ -1,5 +1,5 @@
 === Columns Alignment Fix for Elementor ===
-Contributors: sukiwp
+Contributors: sukiwp, daviedr
 Tags: 
 Requires at least: 4.6
 Tested up to: 4.9
@@ -45,10 +45,10 @@ No worries. Once the plugin is deactivated, you would have default Elementor's c
 
 == Changelog ==
 
-= v1.0.0 =
-
-* Initial release
-
 = v1.0.1 =
 
 * Add load textdomain for translation
+
+= v1.0.0 =
+
+* Initial release

@@ -50,7 +50,7 @@ class Columns_Alignment_Fix_For_Elementor {
 	 * Load plugin textdomain.
 	 */
 	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'columns-alignment-fix-for-elementor', false, basename( dirname( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'columns-alignment-fix-for-elementor' );
 	}
 
 	/**
