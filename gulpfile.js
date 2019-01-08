@@ -4,7 +4,10 @@
  * Define configurations
  */
 
+const info = require( './package.json' );
+
 const config = {
+	init: './' + info.name + '.php',
 	src: {
 		pot: [ './**/*.php', '!./__build/**/*.php' ],
 		build: [
@@ -20,14 +23,17 @@ const config = {
 			'!./gulpfile.js',
 			'!./node_modules',
 			'!./README.md',
-			'!./LICENSE',
 			'!./LICENSE.md',
 			'!./__build',
 		],
 	},
 	dest: {
+		scss: './assets/scss',
+		css: './assets/css',
+		js: './assets/js',
+		icons: './assets/icons',
 		pot: './languages',
-		build: './__build/columns-alignment-fix-for-elementor',
+		build: './__build/' + info.name,
 		zip: './__build/zip',
 	},
 };
@@ -49,23 +55,23 @@ const watch         = require( 'gulp-watch' );
 const zip           = require( 'gulp-zip' );
 
 /**
- * Task: Change theme info (style.css file header) based on package.json values.
+ * Task: Change plugin / theme info based on package.json values.
  */
-gulp.task( 'plugin_info', function() {
+gulp.task( 'main_info', function() {
 	var info = JSON.parse( fs.readFileSync( './package.json' ) );
 
-	// Change theme version on style.css
-	return gulp.src( [ './' + info.name + '.php' ] )
-		.pipe( replace( /(Plugin Name: ).*/, '$1' + info.title ) )
-		.pipe( replace( /(Plugin URI: ).*/, '$1' + info.uri ) )
-		.pipe( replace( /(Description: ).*/, '$1' + info.description ) )
-		.pipe( replace( /(Version: ).*/, '$1' + info.version ) )
-		.pipe( replace( /(Author: ).*/, '$1' + info.author.name ) )
-		.pipe( replace( /(Author URI: ).*/, '$1' + info.author.url ) )
-		.pipe( replace( /(Text Domain: ).*/, '$1' + info.name ) )
-		.pipe( replace( /(Tags: ).*/, '$1' + info.keywords.join( ', ' ) ) )
+	// Change plugin / theme info
+	return gulp.src( [ config.init ] )
+		.pipe( replace( new RegExp( '((?:Plugin|Theme) Name: ).*' ), '$1' + info.title ) )
+		.pipe( replace( new RegExp( '((?:Plugin|Theme) URI: ).*' ), '$1' + info.uri ) )
+		.pipe( replace( new RegExp( '(Description: ).*' ), '$1' + info.description ) )
+		.pipe( replace( new RegExp( '(Version: ).*' ), '$1' + info.version ) )
+		.pipe( replace( new RegExp( '(Author: ).*' ), '$1' + info.author.name ) )
+		.pipe( replace( new RegExp( '(Author URI: ).*' ), '$1' + info.author.url ) )
+		.pipe( replace( new RegExp( '(Text Domain: ).*' ), '$1' + info.name ) )
+		.pipe( replace( new RegExp( '(Tags: ).*' ), '$1' + info.keywords.join( ', ' ) ) )
 
-		.pipe( replace( /(ELEMENTOR_CAF_VERSION', ').*?('.*)/, '$1' + info.version + '$2' ) )
+		.pipe( replace( new RegExp( '(\'' + info.name.replace( '-', '_' ).toUpperCase() + '_VERSION\', \').*?(\'.*)' ), '$1' + info.version + '$2' ) )
 
 		.pipe( gulp.dest( './' ) );
 } );
@@ -80,24 +86,24 @@ gulp.task( 'readme_txt', function() {
 		return contributor.name;
 	});
 
-	// Change theme version on eadme.txt
+	// Change plugin / theme version on readme.txt
 	return gulp.src( [ './readme.txt' ] )
-		.pipe( replace( /(===).*(===)/, '$1 ' + info.title + ' $2' ) )
-		.pipe( replace( /(Contributors: ).*/, '$1' + contributors.join( ', ' ) ) )
-		.pipe( replace( /(Tags: ).*/, '$1' + info.keywords.join( ', ' ) ) )
-		.pipe( replace( /(Stable tag: ).*/, '$1' + info.version ) )
+		.pipe( replace( new RegExp( '(===).*(===)' ), '$1 ' + info.title + ' $2' ) )
+		.pipe( replace( new RegExp( '(Contributors: ).*' ), '$1' + contributors.join( ', ' ) ) )
+		.pipe( replace( new RegExp( '(Tags: ).*' ), '$1' + info.keywords.join( ', ' ) ) )
+		.pipe( replace( new RegExp( '(Stable tag: ).*' ), '$1' + info.version ) )
 
-		.pipe( replace( /(\s\s).*(\s\s== Description ==)/, '$1' + info.description + '$2' ) )
+		.pipe( replace( new RegExp( '(\n\n).*(\n\n== Description ==)' ), '$1' + info.description + '$2' ) )
 
-		.pipe( replace( /(== Description ==\s\s).*(\s\s)/, '$1' + info.description + '$2' ) )
+		.pipe( replace( new RegExp( '(== Description ==\n\n).*(\n\n)' ), '$1' + info.description + '$2' ) )
 
 		.pipe( gulp.dest( './' ) );
 } );
 
 /**
- * Wrapper Task: Set theme info files.
+ * Wrapper Task: Set plugin / theme info files.
  */
-gulp.task( 'info', gulp.series( 'plugin_info', 'readme_txt' ) );
+gulp.task( 'info', gulp.series( 'main_info', 'readme_txt' ) );
 
 /**
  * Task: Generate .pot file for translation.
@@ -105,11 +111,14 @@ gulp.task( 'info', gulp.series( 'plugin_info', 'readme_txt' ) );
 gulp.task( 'pot', function() {
 	var info = JSON.parse( fs.readFileSync( './package.json' ) );
 
-	return gulp.src( config.src.pot )
+	return gulp.src( config.src.pot.concat( [ config.init ] ) )
 		.pipe( wpPot( {
 			domain: info.name,
 			package: info.title,
-			metadataFile: 'columns-alignment-fix-for-elementor.php',
+			metadataFile: config.init,
+		} ).on( 'error', function( error ) {
+			console.error( error );
+			this.emit( 'end' );
 		} ) )
 		.pipe( gulp.dest( config.dest.pot + '/' + info.name + '.pot' ) );
 } );
@@ -167,7 +176,7 @@ gulp.task( 'default', gulp.series( 'build', 'watch' ) );
 gulp.task( 'zip', function() {
 	var info = JSON.parse( fs.readFileSync( './package.json' ) );
 
-	return gulp.src( config.dest.build + '/**/*', { buffer: false, base: config.dest.build } )
-		.pipe( zip( info.name + '.zip' ) )
+	return gulp.src( config.dest.build + '/**/*', { buffer: false, base: config.dest.build + '/../' } )
+		.pipe( zip( info.name + '-' + info.version + '.zip' ) )
 		.pipe( gulp.dest( config.dest.zip ) );
 } );

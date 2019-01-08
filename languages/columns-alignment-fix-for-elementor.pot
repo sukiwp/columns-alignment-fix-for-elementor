@@ -1,4 +1,4 @@
-# Copyright (C) 2018 Columns Alignment Fix for Elementor
+# Copyright (C) 2019 Columns Alignment Fix for Elementor
 # This file is distributed under the same license as the Columns Alignment Fix for Elementor package.
 msgid ""
 msgstr ""
@@ -12,26 +12,6 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: columns-alignment-fix-for-elementor.php:3
-msgid "Columns Alignment Fix for Elementor"
-msgstr ""
-
-#: columns-alignment-fix-for-elementor.php:4
-msgid "http://wordpress.org/plugins/columns-alignment-fix-for-elementor"
-msgstr ""
-
-#: columns-alignment-fix-for-elementor.php:5
-msgid "Add an option to fix Elementor's inconsistent columns alignment when using columns gap on sections."
-msgstr ""
-
-#: columns-alignment-fix-for-elementor.php:7
-msgid "SukiWP"
-msgstr ""
-
-#: columns-alignment-fix-for-elementor.php:8
-msgid "https://sukiwp.com/about/"
-msgstr ""
 
 #: columns-alignment-fix-for-elementor.php:67
 msgid "Enable Columns Alignment Fix"
