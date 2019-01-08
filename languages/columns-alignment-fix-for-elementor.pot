@@ -13,10 +13,10 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: columns-alignment-fix-for-elementor.php:67
+#: columns-alignment-fix-for-elementor.php:65
 msgid "Enable Columns Alignment Fix"
 msgstr ""
 
-#: columns-alignment-fix-for-elementor.php:68
+#: columns-alignment-fix-for-elementor.php:66
 msgid "It will remove the \"weird\" columns gap added by Elementor on the left and right side of each section (when `Columns Gap` is active). This helps you to have consistent content width without having to manually readjust it everytime you create sections with `Columns Gap`"
 msgstr ""

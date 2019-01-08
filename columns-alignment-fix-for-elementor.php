@@ -15,8 +15,6 @@ Tags:
 // Prevent direct access.
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'COLUMNS_ALIGNMENT_FIX_FOR_ELEMENTOR_VERSION', '1.0.0' );
-
 class Columns_Alignment_Fix_For_Elementor {
 	/**
 	 * Singleton instance
