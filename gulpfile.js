@@ -9,11 +9,20 @@ const info = require( './package.json' );
 const config = {
 	init: './' + info.name + '.php',
 	src: {
+		scss: [ './assets/scss/**/*.scss' ],
+		css: [ './assets/css/**/*.css', '!./assets/css/vendors/*' ],
+		js: [ './assets/js/**/*.js', '!./assets/js/vendors/*' ],
 		pot: [ './**/*.php', '!./__build/**/*.php' ],
 		build: [
 			'./*',
 			'./assets/css/**/*',
+			'./assets/icons/**/*',
+			'./assets/images/**/*',
+			'./assets/js/**/*',
+			'./inc/**/*',
 			'./languages/**/*',
+			'./page-templates/**/*',
+			'./template-parts/**/*',
 
 			// exclude files and folders
 			'!**/Thumbs.db',
@@ -133,6 +142,14 @@ gulp.task( 'watch', function() {
 
 	watch( config.src.pot, function() {
 		gulp.task( 'pot' )();
+	} );
+
+	watch( config.src.scss, function() {
+		gulp.task( 'css' )();
+	} );
+
+	watch( config.src.js.concat( [ '!./assets/js/**/*.min.js' ] ), function( obj ) {
+		gulp.task( 'js' )();
 	} );
 
 	watch( config.src.build, { base: './' }, function( obj ) {
