@@ -3,7 +3,7 @@
 Plugin Name: Columns Alignment Fix for Elementor
 Plugin URI: http://wordpress.org/plugins/columns-alignment-fix-for-elementor
 Description: Add an option to fix Elementor's inconsistent columns alignment when using columns gap on sections.
-Version: 1.0.1
+Version: 1.1.0
 Author: SukiWP
 Author URI: https://sukiwp.com/about/
 License: GNU General Public License v2 or later

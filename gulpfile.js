@@ -104,7 +104,7 @@ gulp.task( 'readme_txt', function() {
 
 		.pipe( replace( new RegExp( '(\n\n).*(\n\n== Description ==)' ), '$1' + info.description + '$2' ) )
 
-		.pipe( replace( new RegExp( '(== Description ==\n\n).*(\n\n)' ), '$1' + info.description + '$2' ) )
+		// .pipe( replace( new RegExp( '(== Description ==\n\n).*(\n\n)' ), '$1' + info.description + '$2' ) )
 
 		.pipe( gulp.dest( './' ) );
 } );

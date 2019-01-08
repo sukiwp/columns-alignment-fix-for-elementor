@@ -2,8 +2,8 @@
 Contributors: sukiwp, daviedr
 Tags: 
 Requires at least: 4.6
-Tested up to: 4.9
-Stable tag: 1.0.1
+Tested up to: 5.0
+Stable tag: 1.1.0
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,9 @@ Add an option to fix Elementor's inconsistent columns alignment when using colum
 
 == Description ==
 
-Add an option to fix Elementor's inconsistent columns alignment when using columns gap on sections.
+The `Columns Gap` feature on Elementor's `Section` and `Inner Section` will leave paddings on the sides. This behavior makes difficult for users who want to have consistent content wrapper alignment. By default, you need to manually adjust padding on each column to get the results you want and it is hideous!
+
+Using this plugin, now you can freely use the `Columns Gap` feature without worrying about the inconsistent columns alignment with the rest of your content. This plugin will add an option to automatically "fix" that native behavior and make your columns aligned correctly with your content. No more adjusting padding on each column!
 
 == Frequently Asked Questions ==
 
@@ -44,6 +46,11 @@ No worries. Once the plugin is deactivated, you would have default Elementor's c
 4. Edit your post / page using Elementor editor, select the `Section` widget > `Layout` tab > `Enable Columns Alignment Fix` toggle.
 
 == Changelog ==
+
+= v1.1.0 =
+
+* Use inline CSS instead of static CSS file.
+* Add `overflow-x: hidden` CSS on content container to fix overflowing columns in small devices.
 
 = v1.0.1 =
 
