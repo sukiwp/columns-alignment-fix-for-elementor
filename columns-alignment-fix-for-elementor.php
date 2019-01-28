@@ -39,7 +39,7 @@ class Columns_Alignment_Fix_For_Elementor {
 	 * Class constructor
 	 */
 	protected function __construct() {
-		add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
+		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 		add_action( 'elementor/element/section/section_layout/before_section_end', array( $this, 'add_setting' ), 10, 2 );
 		add_action( 'elementor/frontend/after_enqueue_styles', array( $this, 'add_css' ) );
 	}
@@ -92,5 +92,14 @@ $container . ' { overflow-x: hidden; }
 	}
 }
 
-// Initialize plugin.
-Columns_Alignment_Fix_For_Elementor::instance();
+/**
+ * Initiate this plugin.
+ */
+function columns_alignment_fix_for_elementor() {
+	// Only initiate when Elementor plugin is active.
+	if ( class_exists( 'Elementor\Plugin' ) ) {
+		Columns_Alignment_Fix_For_Elementor::instance();
+	}
+}
+add_action( 'plugins_loaded', 'columns_alignment_fix_for_elementor' );
+
