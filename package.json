@@ -4,8 +4,8 @@
 	"description": "Add an option to fix Elementor's inconsistent columns alignment when using columns gap on sections.",
 	"uri": "http://wordpress.org/plugins/columns-alignment-fix-for-elementor",
 	"author": {
-		"name": "SukiWP",
-		"url": "https://sukiwp.com/about/"
+		"name": "Suki WordPress Theme",
+		"url": "https://sukiwp.com/#about"
 	},
 	"version": "1.1.0",
 	"license": "GPL-2.0-or-later",
@@ -19,10 +19,6 @@
 		{
 			"name": "sukiwp",
 			"url": "https://profiles.wordpress.org/sukiwp"
-		},
-		{
-			"name": "daviedr",
-			"url": "https://profiles.wordpress.org/daviedr"
 		}
 	],
 	"devDependencies": {

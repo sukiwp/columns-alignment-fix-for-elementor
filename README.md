@@ -26,4 +26,4 @@ or use the manual installation:
 
 This plugin will add an option that appears in the **Content** tab on every **Section** and **Inner Section** elements. You can toggle on/off this columsn alignment fix on every section you want.
 
-*This plugin won't affect the section style if the selecteed columns gap is **No Gap**.
+*This plugin won't affect the section style if the selected columns gap is **No Gap**.

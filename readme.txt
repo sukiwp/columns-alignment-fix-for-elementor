@@ -1,5 +1,5 @@
 === Columns Alignment Fix for Elementor ===
-Contributors: sukiwp, daviedr
+Contributors: sukiwp
 Tags: 
 Requires at least: 4.6
 Tested up to: 5.0
@@ -12,23 +12,17 @@ Add an option to fix Elementor's inconsistent columns alignment when using colum
 
 == Description ==
 
+= How Elementor's "Columns Gap" Originally Works =
+
 The `Columns Gap` feature on Elementor's `Section` and `Inner Section` will leave paddings on the sides. This behavior makes difficult for users who want to have consistent content wrapper alignment. By default, you need to manually adjust padding on each column to get the results you want and it is hideous!
 
-Using this plugin, now you can freely use the `Columns Gap` feature without worrying about the inconsistent columns alignment with the rest of your content. This plugin will add an option to automatically "fix" that native behavior and make your columns aligned correctly with your content. No more adjusting padding on each column!
+= What This Plugin Offers =
+
+Using this plugin, you can freely use the `Columns Gap` feature without worrying about the inconsistent columns alignment with the rest of your content. This plugin will add an option to automatically "fix" the Elementor's default behavior and make your columns aligned correctly with your content. No more adjusting padding on each column!
+
+The plugin will add a new option to `Section` or `Columns` widget settings panel on your Elementor editor page. You can find the option called `Enable Columns Alignment Fix` on the `Layout` tab. Once enabled, it will remove the default "weird" columns gap on the left and right side of the section. This fix is done by CSS, so no content would lose.
 
 == Frequently Asked Questions ==
-
-= What's wrong about the default Elementor's columns alignment? =
-
-A clear explanation could be found here: [Elementor Issue #452](https://github.com/pojome/elementor/issues/452#issuecomment-369609547)
-
-= How to enable the fix? =
-
-The plugin will add a new option to `Section` or `Columns` widget settings panel on your Elementor editor page. You can find the option called `Enable Columns Alignment Fix` on the `Layout` tab.
-
-= How does the fix work? =
-
-Once enabled on a section, it will remove the default "weird" columns gap on the left and right side of the section. This fix is done by CSS, so no content would lose.
 
 = Will activating this plugin break my content I made before? =
 
@@ -38,14 +32,19 @@ Not at all, the fix is very optional and could be enabled on each `Section` or `
 
 No worries. Once the plugin is deactivated, you would have default Elementor's columns alignment back.
 
+= Does it work with any theme? =
+
+Absolutely! You can use any theme you like, however we really recommend you to use our theme: [Suki](https://wordpress.org/themes/suki/) - which is highly customizable, lightweight, and of course 100% compatible with Elementor and Elementor Pro.
+
 == Installation ==
 
 1. Go to Plugins > Add New.
-2. Search for "Columns Alignment Fix for Elementor" and wait until the plugin appears in the results.
+2. Search for "Columns Alignment Fix for Elementor".
 3. Click Install button and then Activate the plugin right away.
-4. Edit your post / page using Elementor editor, select the `Section` widget > `Layout` tab > `Enable Columns Alignment Fix` toggle.
 
 == Changelog ==
+
+= v1.1.1
 
 = v1.1.0 =
 
