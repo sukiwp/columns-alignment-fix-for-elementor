@@ -14,9 +14,21 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: columns-alignment-fix-for-elementor.php:65
+msgid "Columns Alignment Fix for Elementor"
+msgstr ""
+
+#: columns-alignment-fix-for-elementor.php:74
+msgid "Enabled globally"
+msgstr ""
+
+#: columns-alignment-fix-for-elementor.php:78
+msgid "Checking this box will make all existing sections and new sections have the columns alignment fix mode enabled. You still can disable it on each section settings."
+msgstr ""
+
+#: columns-alignment-fix-for-elementor.php:95
 msgid "Enable Columns Alignment Fix"
 msgstr ""
 
-#: columns-alignment-fix-for-elementor.php:66
+#: columns-alignment-fix-for-elementor.php:96
 msgid "It will remove the \"weird\" columns gap added by Elementor on the left and right side of each section (when `Columns Gap` is active). This helps you to have consistent content width without having to manually readjust it everytime you create sections with `Columns Gap`"
 msgstr ""

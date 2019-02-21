@@ -40,6 +40,7 @@ class Columns_Alignment_Fix_For_Elementor {
 	 */
 	protected function __construct() {
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+		add_action( 'elementor/admin/after_create_settings/elementor', array( $this, 'add_admin_global_setting' ) );
 		add_action( 'elementor/element/section/section_layout/before_section_end', array( $this, 'add_setting' ), 10, 2 );
 		add_action( 'elementor/frontend/after_enqueue_styles', array( $this, 'add_css' ) );
 	}
@@ -49,6 +50,35 @@ class Columns_Alignment_Fix_For_Elementor {
 	 */
 	public function load_plugin_textdomain() {
 		load_plugin_textdomain( 'columns-alignment-fix-for-elementor' );
+	}
+
+	/**
+	 * Add global setting on Elementor's settings page.
+	 * 
+	 * @param \Elementor\Setting $page
+	 */
+	public function add_admin_global_setting( $page ) {
+		$page->add_section(
+			$page::TAB_STYLE,
+			'columns_alignment_fix',
+			array(
+				'label' => esc_html__( 'Columns Alignment Fix for Elementor', 'columns-alignment-fix-for-elementor' ),
+			)
+		);
+
+		$page->add_field(
+			$page::TAB_STYLE,
+			'columns_alignment_fix',
+			'fix_columns_alignment_default',
+			array(
+				'label'      => esc_html__( 'Enabled globally', 'columns-alignment-fix-for-elementor' ),
+				'field_args' => array(
+					'type'     => 'checkbox',
+					'value'    => 'enabled',
+					'sub_desc' => esc_html__( 'Checking this box will make all existing sections and new sections have the columns alignment fix mode enabled. You still can disable it on each section settings.', 'columns-alignment-fix-for-elementor' ),
+				),
+			)
+		);
 	}
 
 	/**
@@ -65,6 +95,7 @@ class Columns_Alignment_Fix_For_Elementor {
 				'label' => esc_html__( 'Enable Columns Alignment Fix', 'columns-alignment-fix-for-elementor' ),
 				'description' => esc_html__( 'It will remove the "weird" columns gap added by Elementor on the left and right side of each section (when `Columns Gap` is active). This helps you to have consistent content width without having to manually readjust it everytime you create sections with `Columns Gap`', 'columns-alignment-fix-for-elementor' ),
 				'return_value' => 'enabled',
+				'default' => get_option( 'elementor_fix_columns_alignment_default', '' ),
 				'separator' => 'before',
 				'prefix_class' => 'elementor-columns-alignment-fix-',
 			)
