@@ -14,11 +14,11 @@ Add an option to fix Elementor's inconsistent columns alignment when using colum
 
 = How Elementor's "Columns Gap" Originally Works =
 
-The "Columns Gap" feature on Elementor's section and inner section will add unnecessary paddings on the sides. This makes inconsistent content alignment with theme's container or other sections' container.
+The Columns Gap feature on Elementor's section and inner section will add unnecessary paddings on the sides. This makes inconsistent content alignment with theme's container or other sections' container.
 
 = What This Plugin Does =
 
-It adds a new option called "Enable Columns Alignment Fix" on the "Layout" tab of the section's settings. Once enabled, it will remove the unnecessary side paddings. This fix is done by CSS, so no content would be lost.
+It will remove the unnecessary side paddings on Elementor's section and inner section. This fix is done by CSS, so no content would be lost.
 
 = Example =
 
@@ -33,6 +33,16 @@ You will see inconsistent alignment on the content on those 3 sections.
 
 **With the columns alignment fix:**
 Those 3 sections will have consistent side padding!
+
+== How to Activate The Columns Alignmet Fix
+
+= 1. Global configuration =
+
+Go to **Elementor > Settings > Style** and check the **Enabled globally** option.
+
+= 2. Individual section =
+
+When on Elementor builder, select a section / inner section, from the **Layout** tab and check the **Enable Columns Alignment Fix** option.
 
 == Frequently Asked Questions ==
 
@@ -54,9 +64,9 @@ Absolutely! You can use any theme you like, however we really recommend you to u
 
 == Installation ==
 
-1. Go to Plugins > Add New.
-2. Search for "Columns Alignment Fix for Elementor".
-3. Click Install button and then Activate the plugin right away.
+1. Go to **Plugins > Add New**.
+2. Search for **Columns Alignment Fix for Elementor**.
+3. Click **Install** button and then **Activate** the plugin right away.
 
 == Changelog ==
 
