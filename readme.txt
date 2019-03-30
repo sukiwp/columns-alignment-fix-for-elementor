@@ -60,7 +60,7 @@ This is expected as we already removed the native inconsistent side padding. The
 
 = Does it work with any theme? =
 
-Absolutely! You can use any theme you like, however we really recommend you to use our theme: [Suki](https://wordpress.org/themes/suki/) - which is highly customizable, lightweight, and of course 100% compatible with Elementor and Elementor Pro.
+Absolutely! You can use any theme you like, however we really recommend you to use our theme: [Suki](https://sukiwp.com/) - which is highly customizable, lightweight, and of course 100% compatible with Elementor and Elementor Pro.
 
 == Installation ==
 
