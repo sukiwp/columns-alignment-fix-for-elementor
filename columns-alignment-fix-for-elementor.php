@@ -5,7 +5,7 @@ Plugin URI: http://wordpress.org/plugins/columns-alignment-fix-for-elementor
 Description: Add an option to fix Elementor's inconsistent columns alignment when using columns gap on sections.
 Version: 1.2.0
 Author: Suki WordPress Theme
-Author URI: https://sukiwp.com/#about
+Author URI: https://sukiwp.com/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: columns-alignment-fix-for-elementor

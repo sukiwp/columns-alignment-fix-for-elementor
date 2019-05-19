@@ -5,7 +5,7 @@
 	"uri": "http://wordpress.org/plugins/columns-alignment-fix-for-elementor",
 	"author": {
 		"name": "Suki WordPress Theme",
-		"url": "https://sukiwp.com/#about"
+		"url": "https://sukiwp.com/"
 	},
 	"version": "1.2.0",
 	"license": "GPL-2.0-or-later",
@@ -22,15 +22,15 @@
 		}
 	],
 	"devDependencies": {
-		"del": "^3.0.0",
-		"gulp": "^4.0.0",
+		"del": "^4.1.1",
+		"gulp": "^4.0.2",
 		"gulp-replace": "^1.0.0",
 		"gulp-watch": "^5.0.1",
-		"gulp-wp-pot": "^2.3.3",
+		"gulp-wp-pot": "^2.3.5",
 		"gulp-zip": "^4.2.0"
 	},
 	"browserslist": [
-		"last 2 versions",
+		"last 1 version",
 		"ie >= 10"
 	],
 	"dependencies": {}

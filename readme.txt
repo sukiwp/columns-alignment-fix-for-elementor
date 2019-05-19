@@ -2,7 +2,7 @@
 Contributors: sukiwp
 Tags: 
 Requires at least: 4.6
-Tested up to: 5.1
+Tested up to: 5.2
 Stable tag: 1.2.0
 Requires PHP: 5.4
 License: GPLv2 or later
@@ -60,7 +60,7 @@ This is expected as we already removed the native inconsistent side padding. The
 
 = Does it work with any theme? =
 
-Absolutely! You can use any theme you like, however we really recommend you to use our theme: [Suki](https://sukiwp.com/) - which is highly customizable, lightweight, and of course 100% compatible with Elementor and Elementor Pro.
+Absolutely! You can use any theme you like. But if you want a really ligthweight, fast, flexible, and fully compatible Elementor theme, you can try [Suki](https://sukiwp.com/).
 
 == Installation ==
 
